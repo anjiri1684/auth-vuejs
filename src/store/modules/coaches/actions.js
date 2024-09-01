@@ -10,10 +10,15 @@ export default {
     };
     let url = `https://coaches-proj-cfcad-default-rtdb.firebaseio.com/`;
 
-    const response = await fetch(`${url}/coaches/${userId}.json`, {
-      method: 'PUT',
-      body: JSON.stringify(coachData),
-    });
+    const token = context.rootGetters.token;
+
+    const response = await fetch(
+      `${url}/coaches/${userId}.json?auth=${token}`,
+      {
+        method: 'PUT',
+        body: JSON.stringify(coachData),
+      }
+    );
 
     // const responseData = await response.json();
 

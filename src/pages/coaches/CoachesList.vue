@@ -16,7 +16,11 @@
           <base-button mode="outline" @click="loadCoaches(true)"
             >Refresh</base-button
           >
-          <base-button link to="/auth" mode="flat" v-if="!isLoggedIn"
+          <base-button
+            link
+            to="/auth?redirect=register"
+            mode="flat"
+            v-if="!isLoggedIn"
             >Login</base-button
           >
           <base-button

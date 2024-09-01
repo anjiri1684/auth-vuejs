@@ -85,6 +85,8 @@ export default {
               password: this.password,
             });
           }
+          const redirectUrl = '/' + (this.query.redirect || 'coaches');
+          this.$router.replace(redirectUrl);
         } catch (error) {
           this.error = error.message || 'Could not sign up';
         }

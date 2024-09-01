@@ -12,7 +12,7 @@
           <router-link to="/requests">Requests</router-link>
         </li>
         <li v-else>
-          <router-link to="/auth">Login</router-link>
+          <router-link to="/auth">Login to Register as Coach</router-link>
         </li>
         <li v-if="isLoggedIn">
           <base-button @click="logout">Logout </base-button>
@@ -32,6 +32,7 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch('logout');
+      this.$router.replace('/coaches');
     },
   },
 };
